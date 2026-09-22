@@ -11,11 +11,11 @@ const bookingSchema = joi.object({
 });
 
 const bookingUpdateSchema = joi.object({
-  roomNumber: joi.string().required(),
-  startDate: joi.date().required(),
-  endDate: joi.date().required().greater(joi.ref('startDate')),
-  purpose: joi.string().optional(),
-  bookedBy: joi.string().optional(),
+  roomNumber: joi.string(),
+  startDate: joi.date(),
+  endDate: joi.date().greater(joi.ref('startDate')),
+  purpose: joi.string(),
+  bookedBy: joi.string(),
 }).min(1);
 
 // TODO: per README.md section 4, you will need a way to detect whether a
